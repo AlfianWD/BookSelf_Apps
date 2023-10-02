@@ -1,0 +1,137 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.navbar {
+  height: 50px;
+  background-color: rgb(238, 165, 71);
+}
+
+.container-fluid {
+  color: white;
+  font-size: 24px;
+  text-align: center;
+  padding-top: 8px;
+}
+
+.container {
+  height: 280px;
+  margin: 15px 200px 0px 200px;
+  padding-top: 10px;
+  border: 1px solid black;
+  border-radius: 15px;
+}
+
+.container h3 {
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.container .container-y {
+  margin: 0 125px 0 125px;
+  justify-content: center;
+  align-items: center;
+}
+
+.container-x > label {
+  font-size: 18px;
+}
+
+.container-x > input {
+  padding: 0 5px;
+  margin-bottom: 5px;
+  width: 100%;
+  height: 25px;
+  border-radius: 4px;
+}
+
+.button {
+  margin-top: 10px;
+  width: 100%;
+  height: 25px;
+}
+
+.checkbox {
+  margin-top: 10px;
+}
+
+.container-a {
+  margin: 15px 200px 0px 200px;
+  padding-top: 10px;
+  border: 1px solid black;
+  border-radius: 15px;
+}
+
+.container-a h3 {
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.container-a .book_list {
+  margin: 15px;
+  justify-content: center;
+  align-items: center;
+}
+
+.book_list article {
+  margin-bottom: 20px;
+  border: 1px solid black;
+  border-radius: 8px;
+}
+
+.book_list h4,
+p {
+  margin: 10px;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+}
+
+.inner {
+  width: 75%;
+}
+
+.check-button {
+  background: url("./assets/check.png");
+  background-size: contain;
+  border: none;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+}
+
+.check-button:hover {
+  opacity: 50%;
+  box-shadow: 100px black;
+}
+
+.back-button {
+  background: url("./assets/back.png");
+  background-size: contain;
+  border: none;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+}
+
+.back-button:hover {
+  opacity: 50%;
+  box-shadow: 100px black;
+}
+
+.trash-button {
+  background: url("./assets/trash.png");
+  background-size: contain;
+  border: none;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+}
+
+.trash-button:hover {
+  opacity: 50%;
+  box-shadow: 100px black;
+}

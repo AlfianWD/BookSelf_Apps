@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bookshelf Apps</title>
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="container-fluid">
+        <h3>Bookshelf Apps</h3>
+      </div>
+    </nav>
+
+    <div class="container">
+      <h3>Add New Book</h3>
+      <div class="container-y">
+        <form id="formBook">
+          <div class="container-x">
+            <label for="inputTittle">Tittle</label><br />
+            <input
+              type="text"
+              id="inputTittle"
+              name="tittle"
+              required
+              autocomplete="off"
+            />
+          </div>
+          <div class="container-x">
+            <label for="inputAuthor">Author</label><br />
+            <input
+              type="text"
+              id="inputAuthor"
+              name="author"
+              required
+              autocomplete="off"
+            />
+          </div>
+          <div class="container-x">
+            <label for="inputYear">Year</label><br />
+            <input
+              type="date"
+              id="inputYear"
+              name="year"
+              required
+              autocomplete="off"
+            />
+          </div>
+
+          <input class="checkbox" type="checkbox" id="inputCheck" onclick="" />
+          <label>sudah dibaca</label><br />
+
+          <button class="button" type="submit" id="submitButton">
+            Submit Data
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <div class="container-a">
+      <h3>Not Finished Reading</h3>
+
+      <div id="incompleteBookshelfList" class="book_list"></div>
+    </div>
+
+    <div class="container-a">
+      <h3>Done Reading</h3>
+
+      <div id="completeBookshelfList" class="book_list"></div>
+    </div>
+
+    <script src="main.js"></script>
+  </body>
+</html>
