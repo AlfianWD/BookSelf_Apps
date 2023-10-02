@@ -56,7 +56,7 @@ submitAction.addEventListener("submit", function (event) {
     Tittle: Tittle,
     Author: Author,
     Year: Year,
-    isComplete: isComplete.checked ? "sudah" : "belom selesai",
+    isComplete: isComplete.checked,
   };
 
   putDataList(newData);
@@ -87,15 +87,21 @@ function makeBookSelfList(bookListObject) {
 
   container.isComplete = isComplete;
 
-  if (isComplete === "belom selesai") {
+  if (isComplete) {
     const checkButton = document.createElement("button");
     checkButton.classList.add("check-button");
     checkButton.addEventListener("click", function () {
       addTaskToCompleted(id);
     });
 
-    container.append(checkButton);
-  } else if (isComplete === "sudah") {
+    const trashButton = document.createElement("button");
+    trashButton.classList.add("trash-button");
+    trashButton.addEventListener("click", function () {
+      removeTaskFromCompleted(id);
+    });
+
+    container.append(checkButton, trashButton);
+  } else {
     const backButton = document.createElement("button");
     backButton.classList.add("back-button");
     backButton.addEventListener("click", function () {
@@ -118,7 +124,7 @@ function addTaskToCompleted(bookListId) {
   const indexToMove = findBookIndex(bookListId);
   if (indexToMove !== -1) {
     const bookToMove = listDataBook[indexToMove];
-    bookToMove.isComplete = "sudah";
+    bookToMove.isComplete = false;
 
     putDataList(bookToMove);
     removeDataList(bookListId);
@@ -132,7 +138,7 @@ function backTaskToCompleted(bookListId) {
 
   if (indexToBack !== -1) {
     const bookToBack = listDataBook[indexToBack];
-    bookToBack.isComplete = "belom selesai";
+    bookToBack.isComplete = true;
 
     putDataList(bookToBack);
     removeDataList(bookListId);
@@ -166,11 +172,10 @@ document.addEventListener(RENDER_EVENT, function () {
 
   for (const BookItem of listDataBook) {
     const BookElement = makeBookSelfList(BookItem);
-    if (BookElement.isComplete === "belom selesai") {
+    if (BookElement.isComplete) {
       uncompletedBookList.append(BookElement);
     } else {
-      const completeBookElement = makeBookSelfList(BookItem);
-      listCompleted.append(completeBookElement);
+      listCompleted.append(BookElement);
     }
   }
 });
